@@ -56,6 +56,7 @@ Generate Shapes:
 
 ```bash
 from generator import ShapeGenerator
+from process import ImageProcessor
 
 def main():
     choice = input("Want to generate shapes? (yes/y or no/n): ").strip().lower()
