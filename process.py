@@ -44,8 +44,7 @@ class ImageProcessor:
     def _calculate_calibration_ratio(self):
         width = np.linalg.norm(self.cal_shape[0][0] - self.cal_shape[1][0])
         height = np.linalg.norm(self.cal_shape[1][0] - self.cal_shape[2][0])
-        return (210 + 268) / (width + height)  # Average of both dimensions
-
+        return (210 + 268) / (width + height)  
     def _filter_contours(self, contours, min_area=100):
         return [cnt for cnt in contours if cv2.contourArea(cnt) > min_area]
 
@@ -114,11 +113,8 @@ class ImageProcessor:
 
     def show_output(self, output_image):
         cv2.imshow("Output Image", output_image)
-        cv2.waitKey(0)  # Wait for a key press to close the window
-        cv2.destroyAllWindows()  # Close the image window
-
-
-# Usage
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
 
 def main():
@@ -137,8 +133,7 @@ def main():
     result, num_shapes = processor.process_image()
     print(f"::::: NUMBER OF SHAPES :: {num_shapes} :::::")
     processor.save_output(result, "Results.png")
-    # processor.show_output(result)
+    processor.show_output(result)
 
 
-# Run the main function
 main()
