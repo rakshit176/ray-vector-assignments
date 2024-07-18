@@ -28,7 +28,7 @@ pip install numpy opencv-python
 Run the script and follow the prompts to either generate shapes or provide an image path:
 
 ```bash
-python image_processor.py
+python process.py
 ```
 
 ## Example Workflow
